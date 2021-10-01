@@ -32,15 +32,15 @@ public class MainController {
 	}
        return "Exception Test";
 	}
-	//컨트롤러의 예외 처리 v2
-	@ExceptionHandler(CustomException.class)
-	public String handlerControllerException(CustomException e,
-			Model model) {
-		model.addAttribute("name", e.getClass().getSimpleName());
-		model.addAttribute("message", e.getMessage());
-		return "errors/exception";
-	}
-	
+//	//컨트롤러의 예외 처리 v2
+//	@ExceptionHandler(CustomException.class)
+//	public String handlerControllerException(CustomException e,
+//			Model model) {
+//		model.addAttribute("name", e.getClass().getSimpleName());
+//		model.addAttribute("message", e.getMessage());
+//		return "errors/exception";
+//	}
+//	
 	//컨트롤러의 예외 처리 v1
 	
 //	@ExceptionHandler(Exception.class)
