@@ -34,8 +34,8 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public UserVo selectUser(String email) {
-		// TODO Auto-generated method stub
-		return null;
+		UserVo vo = sqlSession.selectOne("users.selsectUserByEmail", email);
+		return vo;
 	}
 
 	@Override

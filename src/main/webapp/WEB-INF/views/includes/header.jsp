@@ -11,7 +11,7 @@
 				</c:when>
 				<c:otherwise>
 				<!-- 로그인 했을 때 -->
-				<li><a href="#">회원정보수정</a></li>
+				<li><a href="<c:url value="/users/update"/>">회원정보수정</a></li>
 				<li><a href="<c:url value="/users/logout" />">로그아웃</a></li>
 				<li>${authUser.name }님 안녕하세요 ^^;</li>
 				</c:otherwise>
