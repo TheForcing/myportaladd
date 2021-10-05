@@ -23,7 +23,7 @@
 		
 		<label for="name">이름</label>
 		<input name="name" type="text" placeholder="이름을 입력하십시오"><br>
-	
+	     
 		<label for="password">비밀번호</label>
 		<input name="password" type="password" placeholder="비밀번호를 입력하십시오"><br>
 	

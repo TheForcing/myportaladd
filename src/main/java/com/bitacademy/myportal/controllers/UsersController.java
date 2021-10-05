@@ -110,15 +110,51 @@ public class UsersController {
 	   
 	   return map;
 	}
-	  
-	
-
-  
-	
+	// 회원 정보 보기
+	@RequestMapping(value="/info", method= RequestMethod.GET)
+	public String infoGET(HttpSession session, Model model) {
+		String id = (String) session.getAttribute("id");
+		UserVo vo = UserService.readUser(id);
+	    model.addAttribute("UserVo", vo);
+	    
+	}
+	// 회원 정보 수정 
+	@RequestMapping(value="/update", method=RequestMethod.POST)
+	public String updateGET(@ModelAttribute UserVo vo, HttpSession session, Model model) {
 		
+		  model.addAttribute("UserVo", UserService.readUser((String)session.getAttribute("id"));
+		  
+		  return "/users/updateform";
+		  
 		
+      
+	}
+   // 회원 정보 삭제
+	
+	@RequestMapping(value="/delete", method = RequestMethod.GET)
+	public String deleteGET(HttpSession session) {
+		String id= (String) session.getAttribute("id");
+		if(id == null) {
+			return "redirect:/users/main";
+			
+		}
+		return "users/deleteform"; 
+			
+	}
+	
+	@RequestMapping(value ="/delete", method= RequestMethod.POST)
+	public String deletePOST(UserVo vo, HttpSession session) {
+		UserService.deleteUser(vo);
+		
+		session.invalidate();
+		
+		return "redirect:/users/main";
+	}
+		
+  }
 	
 
 
 
-}
+
+

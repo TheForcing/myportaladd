@@ -19,6 +19,20 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public Long updateUser(UserVo vo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public UserDao getUserDaoImpl() {
+		return userDaoImpl;
+	}
+
+	public void setUserDaoImpl(UserDao userDaoImpl) {
+		this.userDaoImpl = userDaoImpl;
+	}
+
+	@Override
 	public UserVo getUser(String email, String password) {
 		UserVo userVo = userDaoImpl.selectUser(email, password);
 		return userVo;
