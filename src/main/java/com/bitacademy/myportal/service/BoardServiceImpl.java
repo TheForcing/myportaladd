@@ -9,6 +9,12 @@ import com.bitacademy.myportal.repository.BoardDao;
 import com.bitacademy.myportal.repository.BoardVo;
 @Service
 public class BoardServiceImpl implements BoardService {
+	@Override
+	public boolean delete(long no) {
+		int deletedCount = boardDaoImpl.delete(no);
+		return deletedCount == 1;
+	}
+
 	@Autowired
 	private BoardDao boardDaoImpl;
 
@@ -20,8 +26,8 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public BoardVo getContent(Long no) {
-		// TODO Auto-generated method stub
-		return null;
+		BoardVo content = boardDaoImpl.getContent(no);
+		return content;
 	}
 
 	@Override
@@ -32,8 +38,8 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public boolean update(BoardVo vo) {
-		// TODO Auto-generated method stub
-		return false;
+		int updatedCount = boardDaoImpl.update(vo);
+		return updatedCount == 1;
 	}
 
 }

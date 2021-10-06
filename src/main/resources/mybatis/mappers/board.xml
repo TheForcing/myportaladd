@@ -27,4 +27,26 @@
 		FROM board b, users u
 		WHERE b.user_no = u.no
 	</select>
+	<!-- 게시글 하나 출력 -->
+	<select id="selectOne" resultType="boardVo" parameterType="long">
+		SELECT 
+		no,
+		title,
+		content,
+		hit,
+		reg_date as regDate,
+		user_no as userNo
+		FROM board where no = #{no}
+	</select>
+	<!-- 게시글 선택과 동시에 조회수 올리기(서비스 구현) -->
+	<update id="addhit" parameterType="long">
+		UPDATE board set hit = hit+1 where no = #{no}
+	</update>
+	<update id="update" parameterType="boardVo">
+		UPDATE board set content=#{content}, title=#{title}
+		WHERE no = #{no}
+	</update>
+	<delete id="delete" parameterType="long">
+		DELETE FROM board WHERE no = #{no}
+	</delete>
 </mapper> 

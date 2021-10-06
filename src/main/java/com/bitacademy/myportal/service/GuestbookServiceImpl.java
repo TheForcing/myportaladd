@@ -25,13 +25,13 @@ public class GuestbookServiceImpl implements GuestbookService {
 	public boolean writeMessage(GuestbookVo vo) {
 		int insertedCount = guestbookDaoImpl.insert(vo);
 		System.out.println("삽입된 방명록 레코드:" + insertedCount);
-		return 1 == insertedCount;
+		return insertedCount == 1;
 	}
 
 	@Override
 	public boolean deleteMessage(GuestbookVo vo) {
 		int deletedCount = guestbookDaoImpl.delete(vo);
-		return 1 == deletedCount;
+		return  deletedCount == 1;
 	}
 
 }

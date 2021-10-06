@@ -19,9 +19,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Long updateUser(UserVo vo) {
-		// TODO Auto-generated method stub
-		return null;
+	public int updateUser(UserVo vo) {
+		int updatedCount =userDaoImpl.updateUser(vo);
+		return updatedCount;
 	}
 
 	public UserDao getUserDaoImpl() {
