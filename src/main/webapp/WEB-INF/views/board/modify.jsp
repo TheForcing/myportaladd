@@ -32,7 +32,7 @@
 						</tr>
 						<tr>
 							<td>내용</td>
-							<td><textarea id="content" name="content">수정해야 할 글 내용</textarea>
+							<td><textarea id="content" name="content">수정할 글 내용</textarea>
 							</td>
 						</tr>
 						<tr>

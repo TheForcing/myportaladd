@@ -19,7 +19,7 @@
 	<h1>회원 정보 수정</h1>
 
 	<form id="join-form" name="userUpdateForm"
-		action='<c:url value="/user/update"/>' method="POST">
+		action='<c:url value="/users/update"/>' method="POST">
 		<input type="hidden" name="no" value="${authUser.getNo() }"> <label for="name">이름</label>
 		<input name="name" type="text" placeholder="이름을 입력하십시오" value="${authUser.getName() }"><br>
 
@@ -28,7 +28,7 @@
 			for="email">이메일</label> <input type="text" name="email"
 			placeholder="이메일을 입력하십시오." value="${authUser.getEmail() }">
 		<button
-			onclick="checkEmail(this, '<c:url value="/user/emailcheck" />' );event.preventDefault();">중복
+			onclick="checkEmail(this, '<c:url value="/users/emailcheck" />' );event.preventDefault();">중복
 			확인</button>
 		<br> <label for="gender">성별</label> <input type="radio"
 			name="gender" value="M" checked='${authUser.getGender().equals("M")  }'>남성
