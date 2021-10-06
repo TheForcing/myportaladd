@@ -122,7 +122,7 @@ public class UsersController {
 		if(updatedCount == 1) {
 			session.invalidate();
 		} else {
-			System.out.println("UPDATE 실패!");
+			System.out.println("업데이트 실패!");
 		}
 		
 		return "redirect:/";

@@ -28,7 +28,9 @@
 	</select>
 	<update id="update" parameterType="userVo">
 		update users
-		set name = #{name},email = #{email}, password = #{password}, gender = #{gender}
+		set name = #{name},email = #{email}, 
+		password = #{password}, 
+		gender = #{gender}
 		where no = #{no}
 	</update>
 	
